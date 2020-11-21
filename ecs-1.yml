@@ -115,4 +115,4 @@ Resources:
       SecurityGroups:
         - !GetAtt LoadBalancerSecurityGroup.GroupId
 
-# aws cloudformation create-stack --stack-name aws-ecs-typescript-api --template-body file://./ecs-1.yml --capabilities CAPABILITY_NAMED_IAM --parameters ParameterKey=VPCID,ParameterValue=YOURVPCID ParameterKey=Subnet1ID,ParameterValue=YOURSUBNET1ID ParameterKey=Subnet2ID,ParameterValue=YOURSUBNET2ID ParameterKey=DomainName,ParameterValue=YOURDOMAIN.com
+# aws cloudformation create-stack --stack-name aws-ecs-typescript-api --template-body file://./ecs-1.yml --capabilities CAPABILITY_NAMED_IAM --parameters ParameterKey=VPCID,ParameterValue=YOUR_VPC_ID ParameterKey=Subnet1ID,ParameterValue=YOUR_SUBNET_1_ID ParameterKey=Subnet2ID,ParameterValue=YOUR_SUBNET_2_ID ParameterKey=DomainName,ParameterValue=YOUR_DOMAIN_NAME.com

@@ -61,7 +61,9 @@ Resources:
       ExecutionRoleArn: !Ref ExecutionRole
       ContainerDefinitions:
         - Name: aws-ecs-typescript-api-container
-          Image: XXXXXXXXXXXX.dkr.ecr.YOUR-REGION.amazonaws.com/aws-ecs-typescript-api
+          Image: nginx:1.17.7
+          # REPLACE WITH YOUR ACCOUNT NUMBER AND REGION
+          # Image: YOUR_AWS_ACCOUNT_NUMBER.dkr.ecr.YOUR_AWS_REGION.amazonaws.com/aws-ecs-typescript-api
           PortMappings:
             - ContainerPort: 80
             - ContainerPort: 443
@@ -154,4 +156,4 @@ Resources:
       ResourceRecords:
         - !GetAtt LoadBalancer.DNSName
 
-# aws cloudformation update-stack --stack-name aws-ecs-typescript-api --template-body file://./ecs-2.yml --capabilities CAPABILITY_NAMED_IAM --parameters ParameterKey=VPCID,ParameterValue=YOURVPCID ParameterKey=Subnet1ID,ParameterValue=YOURSUBNET1ID ParameterKey=Subnet2ID,ParameterValue=YOURSUBNET2ID ParameterKey=DomainName,ParameterValue=YOURDOMAIN.com
+# aws cloudformation update-stack --stack-name aws-ecs-typescript-api --template-body file://./ecs-2.yml --capabilities CAPABILITY_NAMED_IAM --parameters ParameterKey=VPCID,ParameterValue=YOUR_VPC_ID ParameterKey=Subnet1ID,ParameterValue=YOUR_SUBNET_1_ID ParameterKey=Subnet2ID,ParameterValue=YOUR_SUBNET_2_ID ParameterKey=DomainName,ParameterValue=YOUR_DOMAIN_NAME.com
