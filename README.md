@@ -15,8 +15,7 @@ Then open http://localhost in your browser.
 ### What you'll need to deploy to AWS:  
 A VPC and two subnets in the same AWS Region. 
 
-The code in this repository creates the infrastructure for an API service using AWS ECS Fargate and using the default NGINX Image.  Once successfully running, the sub-domain and SSL cert are attached to the ALB and then the image for this application is pushed to AWS ECR.    
-
+The code in this repository creates the infrastructure for an API service using AWS ECS Fargate and initially uses the default NGINX Image.  Once successfully running, the sub-domain and SSL cert are attached to the ALB.  You may then create an Image for this application locally, push it to AWS ECR and update the AWS ECS Fargate service to use your Image.  
 
 `ecs-1.yml` creates the AWS ECS Fargate infastructure for the API service.  
 `ecs-2.yml` updates the infrastructure to use HTTPS and the sub-domain.  
