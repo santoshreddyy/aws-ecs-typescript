@@ -11,10 +11,10 @@ app.use(bodyParser.json());
 require('dotenv').config();
 
 app.get('/', async (req: Request, res: Response) => {
-  return res.send({ error: false, v: 1 });
+  return res.send({ error: false, v: 2 });
 });
 
-const server = app.listen(process.env.PORT || 80);
+const server = app.listen(process.env.PORT || 8080);
 
 if (process.env.NODE_ENV === 'production') {
   process.on('SIGINT', () => {
