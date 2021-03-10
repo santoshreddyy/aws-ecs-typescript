@@ -108,6 +108,10 @@ Resources:
           FromPort: 8080
           ToPort: 8080
           CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
   TaskDefinition:
     Type: AWS::ECS::TaskDefinition
     Properties:
@@ -136,7 +140,7 @@ Resources:
     Type: AWS::ECS::Service
     Properties:
       # rename after first deploy
-      ServiceName: aws-ecs-typescript-svc
+      ServiceName: aws-ecs-typescript-service
       Cluster: !Ref Cluster
       TaskDefinition: !Ref TaskDefinition
       DesiredCount: 1

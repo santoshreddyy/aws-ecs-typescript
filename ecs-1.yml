@@ -61,8 +61,8 @@ Resources:
       GroupDescription: Security group for container
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: 8080
-          ToPort: 8080
+          FromPort: 80
+          ToPort: 80
           CidrIp: 0.0.0.0/0
   TaskDefinition:
     Type: AWS::ECS::TaskDefinition
@@ -77,7 +77,7 @@ Resources:
         - Name: aws-ecs-typescript-container
           Image: nginx:1.17.7
           PortMappings:
-            - ContainerPort: 8080
+            - ContainerPort: 80
           LogConfiguration:
             LogDriver: awslogs
             Options:
@@ -89,7 +89,6 @@ Resources:
   Service:
     Type: AWS::ECS::Service
     Properties:
-      # rename after first deploy
       ServiceName: aws-ecs-typescript-svc
       Cluster: !Ref Cluster
       TaskDefinition: !Ref TaskDefinition
