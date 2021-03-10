@@ -57,7 +57,11 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-2
+<<<<<<< HEAD:.github/workflows/aws.yml
           SECRET_NAME: my-app/app
+=======
+          SECRET_NAME: ecs-typescript/app
+>>>>>>> a841dd6f0d9de03ff4bc704ba7499ac141fdaa44:.github/workflows/ecs-deploy.yml
           OUTPUT_PATH: '.env'
 
       - name: Translate ENV variables
