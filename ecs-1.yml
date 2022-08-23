@@ -169,8 +169,8 @@ Resources:
         AwsvpcConfiguration:
           AssignPublicIp: ENABLED
           Subnets:
-            - !Ref PublicOne
-            - !Ref PublicTwo
+            - !Ref Subnet1ID
+            - !Ref Subnet2ID
           SecurityGroups:
             - !GetAtt ContainerSecurityGroup.GroupId
   LoadBalancerSecurityGroup:
@@ -192,8 +192,8 @@ Resources:
     Properties:
       Name: aws-ecs-typescript-api-alb
       Subnets:
-        - !Ref PublicOne
-        - !Ref PublicTwo
+        - !Ref Subnet1ID
+        - !Ref Subnet2ID
       SecurityGroups:
         - !GetAtt LoadBalancerSecurityGroup.GroupId
 
